@@ -2,6 +2,8 @@
 
 **TODO: Add description**
 
+
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -13,6 +15,28 @@ def deps do
     {:reports_generator, "~> 0.1.0"}
   ]
 end
+```
+
+## Execute
+
+```
+iex -S mix
+```
+
+```
+ReportsGenerator.build("report_complete.csv")
+```
+
+```
+ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"])
+```
+
+```
+:timer.tc(fn -> ReportsGenerator.build("report_complete.csv") end)
+```
+
+```
+:timer.tc(fn -> ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"]) end)
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
