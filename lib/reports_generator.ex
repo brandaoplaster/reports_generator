@@ -22,6 +22,9 @@ defmodule ReportsGenerator do
     end)
   end
 
+  def build_from_many(files_names) when not is_list(files_names),
+    do: {:error, "Please provide a list of strings"}
+
   def build_from_many(files_names) do
     files_names
     |> Task.async_stream(&build/1)
