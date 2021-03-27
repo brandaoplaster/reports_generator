@@ -5,7 +5,7 @@ defmodule ReportsGenerator.Parser do
     |> Stream.map(fn line -> parse_line(line) end)
   end
 
-  def parse_line(line) do
+  defp parse_line(line) do
     line
     |> String.trim()
     |> String.split(",")

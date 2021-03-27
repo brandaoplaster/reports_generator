@@ -2,12 +2,13 @@ defmodule ReportsGenerator do
   alias ReportsGenerator.Parser
 
   @available_foods [
-    "açai",
+    "açaí",
     "churrasco",
     "esfirra",
-    "humbúrguer",
+    "hambúrguer",
     "pastel",
     "pizza",
+    "prato_feito",
     "sushi"
   ]
 
@@ -15,7 +16,7 @@ defmodule ReportsGenerator do
 
   def build(filename) do
     filename
-    |> Parser.parse_line()
+    |> Parser.parse_file()
     |> Enum.reduce(report_acc(), fn line, report ->
       sum_values(line, report)
     end)
